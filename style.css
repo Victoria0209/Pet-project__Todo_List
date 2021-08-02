@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: rgba(94, 88, 67, 0);
+}
+
+.wrapper__block {
+    text-align: center;
+}
+
+.header__h1 {
+    color: #4a4b4d;
+}
+
+.wrapper__header {
+    background: linear-gradient(180deg, rgb(197, 177, 175), rgba(94, 88, 67, 0));
+    padding: 20px;
+    font-size: 24px;
+}
+
+.input {
+    border-radius: 8px 0 0 8px;
+    width: 600px;
+    margin: 10px 0;
+    border: .5px solid gray;
+    padding: 6px;
+}
+
+.addBtn {
+    color: rgb(209, 209, 217);
+    padding: 4.8px;
+    border-radius: 0 8px 8px 0;
+    background: linear-gradient(rgb(110, 112, 120), rgb(81, 81, 86)) rgb(110, 112, 120);
+    margin: -8px;
+}
+
+.list__todo {
+    display: inline-block;
+}
+
+.list__li {
+    width: 800px;
+    background-color: rgb(101, 122, 106);
+    padding: 11px;
+    text-align: left;
+    margin: 10px;
+    position: relative;
+    color: white;
+}
+
+ul li:nth-child(odd) {
+    background: rgb(116 83 82);
+}
+
+.list__li::after {
+    content: 'X';
+    position: absolute;
+    top: 4px;
+    right: 7px;
+    cursor: pointer;
+    color: #c0cedf;
+}
