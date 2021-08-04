@@ -12,6 +12,8 @@ html {
 
 .header__h1 {
     color: #4a4b4d;
+    font-size: 35px;
+    margin-bottom: 35px;
 }
 
 .wrapper__header {
@@ -48,17 +50,30 @@ html {
     margin: 10px;
     position: relative;
     color: white;
+    height: 50px;
+    font-size: 25px;
 }
 
 ul li:nth-child(odd) {
     background: rgb(116 83 82);
 }
 
-.list__li::after {
+.btnRemove {
     content: 'X';
     position: absolute;
     top: 4px;
     right: 7px;
     cursor: pointer;
     color: #c0cedf;
+    background: transparent;
+    border: .5px solid transparent;
+
+}
+
+.btnRemove:hover {
+    border: .5px solid rgb(141, 136, 136);
+}
+
+.btnRemove:active {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
