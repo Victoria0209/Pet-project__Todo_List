@@ -38,6 +38,17 @@ html {
     margin: -8px;
 }
 
+.btnEditor{
+    content: 'fsdl,';
+    position: absolute;
+    top: 4px;
+    right: 15px;
+    cursor: pointer;
+    color: #7caae2;
+    background: transparent;
+    border: .5px solid transparent;
+}
+
 .list__todo {
     display: inline-block;
 }

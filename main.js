@@ -2,8 +2,16 @@ const ul_list = document.getElementsByClassName('list__todo')[0];
 const form = document.getElementsByTagName('form')[0];
 const field = document.getElementsByClassName('input')[0];
 
-function handleRemoveClick(){
-this.parentNode.remove();
+let todos;
+
+function saveItem() {
+    todos = ul_list.innerHTML;
+    localStorage.setItem('todos', todos);
+}
+
+function handleRemoveClick() {
+    this.parentNode.remove();
+    saveItem();
 }
 
 function createListItem(value) {
@@ -17,10 +25,14 @@ function createListItem(value) {
 
     btnX.addEventListener('click', handleRemoveClick)
 
-    return li_list
-}
+    const editor = document.createElement('button');
+    li_list.append(editor);
+    editor.classList.add('btnEditor');
 
-// createListItem('');
+    saveItem();
+    return li_list;
+
+}
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -29,4 +41,9 @@ form.addEventListener('submit', (e) => {
     field.value = '';
     const valueItem = createListItem(text)
     ul_list.append(valueItem)
+    saveItem();
 })
+
+if (localStorage.getItem('todos')) {
+    ul_list.innerHTML=localStorage.getItem('todos');
+}
