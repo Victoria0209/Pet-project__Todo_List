@@ -18,20 +18,21 @@ function createListItem(value) {
     const li_list = document.createElement('li');
     li_list.textContent = value;
     li_list.classList.add('list__li');
+
     const btnX = document.createElement('button');
     li_list.append(btnX);
     btnX.classList.add('btnRemove');
     btnX.textContent = 'X';
 
-    btnX.addEventListener('click', handleRemoveClick)
-
     const editor = document.createElement('button');
     li_list.append(editor);
     editor.classList.add('btnEditor');
+    editor.textContent = '🖊';
+    
+    btnX.addEventListener('click', handleRemoveClick)
 
     saveItem();
     return li_list;
-
 }
 
 form.addEventListener('submit', (e) => {
@@ -45,5 +46,10 @@ form.addEventListener('submit', (e) => {
 })
 
 if (localStorage.getItem('todos')) {
-    ul_list.innerHTML=localStorage.getItem('todos');
+    ul_list.innerHTML = localStorage.getItem('todos');
+  
+    for (let index = 0; index < ul_list.children.length; index++) {
+        const element = ul_list.children[index];
+        element.getElementsByClassName('btnRemove')[0].addEventListener('click', handleRemoveClick)
+    }
 }
